@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", cursive;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-pitch-black: #050505;
+  --color-dark-bg: #080808;
+  --color-surface: #121212;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-text-secondary font-sans selection:bg-white selection:text-black antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .floating-nav {
+    @apply fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 rounded-2xl px-8 py-4 flex justify-between items-center bg-black/40 border-white/10 shadow-2xl backdrop-blur-md border;
+  }
+
+  .btn-primary {
+    @apply bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-white/90 transition-all uppercase text-xs tracking-widest;
+  }
+
+  .btn-secondary {
+    @apply border border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-all uppercase text-xs tracking-widest;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4A017;
+}
